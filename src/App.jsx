@@ -7,19 +7,25 @@ function App() {
   const [password, setPassword] = useState("");
 
   const register = async () => {
-    const res = await axios.post("https://backend-hypa.onrender.com/register", {
-      username,
-      password,
-    });
+    const res = await axios.post(
+      "https://backend-hypa.onrender.com/api/auth/register",
+      {
+        username,
+        password,
+      },
+    );
 
     alert(res.data);
   };
 
   const login = async () => {
-    const res = await axios.post("https://backend-hypa.onrender.com/login", {
-      username,
-      password,
-    });
+    const res = await axios.post(
+      "https://backend-hypa.onrender.com/api/auth/login",
+      {
+        username,
+        password,
+      },
+    );
 
     alert(res.data);
   };
